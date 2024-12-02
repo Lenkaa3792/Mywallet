@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:my_pocket_wallet/screens/maindashboard.dart';
 import 'package:my_pocket_wallet/screens/signgin.dart';
+import 'package:flutter/cupertino.dart';
 
 // LoginPage widget for the login screen.
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool passToggle = true;
 
   @override
   Widget build(BuildContext context) {
@@ -24,19 +32,33 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const TextField(
+            TextField(
               decoration: InputDecoration(
                 labelText: 'Username',
                 border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.person),
               ),
             ),
-            const SizedBox(height: 20),
-            const TextField(
-              obscureText: true,
+            SizedBox(height: 20),
+            TextField(
+              obscureText: passToggle ? true : false,
               decoration: InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-              ),
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      if (passToggle == true) {
+                        passToggle = false;
+                      } else {
+                        passToggle = true;
+                      }
+                      setState(() {});
+                    },
+                    child: passToggle
+                        ? Icon(CupertinoIcons.eye_slash_fill)
+                        : Icon(CupertinoIcons.eye_fill),
+                  )),
             ),
             const SizedBox(height: 20),
             ElevatedButton(

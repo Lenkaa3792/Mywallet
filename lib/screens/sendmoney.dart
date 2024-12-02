@@ -73,12 +73,12 @@ class _SendMoneyPageState extends State<SendMoneyPage> {
               items: const [
                 // Dropdown items for selecting payment method.
                 DropdownMenuItem(
-                  child: Text('Bank Account'),
                   value: 'Bank Account',
+                  child: Text('Bank Account'),
                 ),
                 DropdownMenuItem(
-                  child: Text('Mobile Wallet'),
                   value: 'Mobile Wallet',
+                  child: Text('Mobile Wallet'),
                 ),
               ],
               onChanged: (value) {
@@ -109,11 +109,11 @@ class TransactionConfirmationPage extends StatelessWidget {
 
   // Constructor to receive the transaction details.
   const TransactionConfirmationPage({
-    Key? key,
+    super.key,
     required this.recipient,
     required this.amount,
     required this.paymentMethod,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
