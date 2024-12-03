@@ -25,7 +25,7 @@ class WithdrawScreen extends StatelessWidget {
             TextField(
               controller: amountController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Enter amount to withdraw',
               ),
@@ -69,7 +69,7 @@ class WithdrawScreen extends StatelessWidget {
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Processing withdrawal of \$${amount}'),
+                        content: Text('Processing withdrawal of \$$amount'),
                       ),
                     );
                     // Add your withdrawal logic here

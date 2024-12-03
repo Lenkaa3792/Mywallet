@@ -1,5 +1,6 @@
 // Updated DashboardPage with centered buttons
 import 'package:flutter/material.dart';
+import 'package:my_pocket_wallet/screens/withdraw.dart';
 import 'sendmoney.dart'; // Importing the SendMoneyPage for navigation.
 import 'paybills.dart'; // Importing the PayBillsPage for navigation.
 
@@ -36,8 +37,8 @@ class DashboardPage extends StatelessWidget {
   }
 
   Widget _greetUser() {
-    return SizedBox(
-      child: const Text(
+    return const SizedBox(
+      child: Text(
         'Hello, User!', // Greeting text.
         style: TextStyle(
           fontSize: 24,
@@ -96,14 +97,14 @@ Widget _paymentType(BuildContext context) {
             context,
             MaterialPageRoute(builder: (context) => const SendMoneyPage()),
           );
-        },
-        child: const Text('Send Money'), // Button label.
+        }, // Button label.
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(
               vertical: 15, horizontal: 30), // Padding inside the button.
           textStyle:
               const TextStyle(fontSize: 18), // Text style for the button.
         ),
+        child: const Text('Send Money'),
       ),
 
       const SizedBox(height: 20), // Adds space between the buttons.
@@ -116,24 +117,29 @@ Widget _paymentType(BuildContext context) {
             context,
             MaterialPageRoute(builder: (context) => const PayBillsPage()),
           );
-        },
-        child: const Text('Pay Bills'), // Button label.
+        }, // Button label.
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(
               vertical: 15, horizontal: 30), // Padding inside the button.
           textStyle:
               const TextStyle(fontSize: 18), // Text style for the button.
         ),
+        child: const Text('Pay Bills'),
       ),
       const SizedBox(height: 20),
       ElevatedButton(
-        //TODO: link this button to the withdraw screen
-        onPressed: () {},
-        child: Text('Withdraw'),
+        
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const WithdrawScreen()),
+          );
+        },
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-          textStyle: TextStyle(fontSize: 18),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+          textStyle: const TextStyle(fontSize: 18),
         ),
+        child: const Text('Withdraw'),
       )
     ],
   );

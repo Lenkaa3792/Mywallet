@@ -72,12 +72,12 @@ class _PayBillsPageState extends State<PayBillsPage> {
               items: const [
                 // Dropdown items for payment methods.
                 DropdownMenuItem(
-                  child: Text('Bank Account'),
                   value: 'Bank Account',
+                  child: Text('Bank Account'),
                 ),
                 DropdownMenuItem(
-                  child: Text('Mobile Wallet'),
                   value: 'Mobile Wallet',
+                  child: Text('Mobile Wallet'),
                 ),
               ],
               onChanged: (value) {
