@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_pocket_wallet/screens/forgotpassword.dart';
 import 'package:my_pocket_wallet/screens/maindashboard.dart';
 import 'package:my_pocket_wallet/screens/signgin.dart';
 
@@ -37,6 +38,16 @@ class LoginPage extends StatelessWidget {
                 labelText: 'Password',
                 border: OutlineInputBorder(),
               ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ForgotPasswordPage()),
+                );
+              },
+              child: const Text('Forgot password'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
