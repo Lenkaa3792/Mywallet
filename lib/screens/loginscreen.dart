@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_pocket_wallet/screens/home_page.dart';
-import 'package:my_pocket_wallet/screens/maindashboard.dart';
 import 'package:my_pocket_wallet/screens/signgin.dart';
 
 // LoginPage widget for the login screen.
