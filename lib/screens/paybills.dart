@@ -108,11 +108,11 @@ class PaymentConfirmationPage extends StatelessWidget {
 
   // Constructor to receive payment details.
   const PaymentConfirmationPage({
-    Key? key,
+    super.key,
     required this.biller,
     required this.amount,
     required this.paymentMethod,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

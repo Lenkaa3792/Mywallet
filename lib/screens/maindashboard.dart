@@ -1,5 +1,6 @@
 // Updated DashboardPage with centered buttons
 import 'package:flutter/material.dart';
+import 'package:my_pocket_wallet/screens/paymenthistory.dart';
 import 'package:my_pocket_wallet/screens/withdraw.dart';
 import 'sendmoney.dart'; // Importing the SendMoneyPage for navigation.
 import 'paybills.dart'; // Importing the PayBillsPage for navigation.
@@ -30,6 +31,25 @@ class DashboardPage extends StatelessWidget {
 
             // Row to center the buttons horizontally.
             _paymentType(context),
+
+            const SizedBox(height: 40),
+
+            ElevatedButton(
+              onPressed: () {
+                // Navigates to the SendMoneyPage when pressed.
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PaymentHistoryPage()),
+                );
+              }, // Button label.
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 15, horizontal: 30), // Padding inside the button.
+                textStyle:
+                    const TextStyle(fontSize: 18), // Text style for the button.
+              ),
+              child: const Text('Payment History'),
+            ),
           ],
         ),
       ),
@@ -128,7 +148,6 @@ Widget _paymentType(BuildContext context) {
       ),
       const SizedBox(height: 20),
       ElevatedButton(
-        
         onPressed: () {
           Navigator.push(
             context,
