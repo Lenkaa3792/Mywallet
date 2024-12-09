@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_pocket_wallet/screens/loginscreen.dart';
-import 'package:my_pocket_wallet/screens/maindashboard.dart';
-import 'package:my_pocket_wallet/screens/signgin.dart';
 
 // ForgotPasswordPage widget for the login screen.
 class ForgotPasswordPage extends StatelessWidget {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_pocket_wallet/screens/forgotpassword.dart';
 import 'package:my_pocket_wallet/screens/maindashboard.dart';
 import 'package:my_pocket_wallet/screens/signgin.dart';
 
@@ -55,7 +54,8 @@ class LoginPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DashboardPage()),
+                    builder: (context) => const HomePage(),
+                  ),
                 );
               },
               child: const Text('Login'),
