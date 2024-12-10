@@ -1,6 +1,6 @@
 // Updated DashboardPage with centered buttons
 import 'package:flutter/material.dart';
-import 'package:my_pocket_wallet/screens/withdraw.dart';
+import 'withdraw.dart'; //import withdraw
 import 'sendmoney.dart'; // Importing the SendMoneyPage for navigation.
 import 'paybills.dart'; // Importing the PayBillsPage for navigation.
 
