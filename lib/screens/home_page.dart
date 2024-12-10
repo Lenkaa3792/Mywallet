@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'withdraw.dart'; // Import the WithdrawScreen
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,14 +7,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFDFF), // Background color
+      backgroundColor: const Color(0xFFFFFDFF),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Greeting Section
               const SizedBox(height: 20),
               const Text(
                 'Good Morning,',
@@ -109,13 +109,22 @@ class HomePage extends StatelessWidget {
                   mainAxisSpacing: 15,
                   children: [
                     _buildMenuItem(
-                        Icons.account_balance_wallet, 'Account\nand Card'),
-                    _buildMenuItem(Icons.swap_horiz, 'Transfer'),
-                    _buildMenuItem(Icons.attach_money, 'Withdraw'),
-                    _buildMenuItem(Icons.phone_android, 'Mobile\nrecharge'),
-                    _buildMenuItem(Icons.receipt, 'Pay the bill'),
-                    _buildMenuItem(Icons.credit_card, 'Credit card'),
-                    _buildMenuItem(Icons.insert_chart, 'Transaction\nreport'),
+                        context, Icons.account_balance_wallet, 'Account\nand Card', null),
+                    _buildMenuItem(context, Icons.swap_horiz, 'Transfer', null),
+                    _buildMenuItem(context, Icons.attach_money, 'Withdraw',
+                        () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WithdrawScreen()),
+                      );
+                    }),
+                    _buildMenuItem(context, Icons.phone_android,
+                        'Mobile\nrecharge', null),
+                    _buildMenuItem(context, Icons.receipt, 'Pay the bill', null),
+                    _buildMenuItem(context, Icons.credit_card, 'Credit card', null),
+                    _buildMenuItem(context, Icons.insert_chart,
+                        'Transaction\nreport', null),
                   ],
                 ),
               ),
@@ -146,22 +155,26 @@ class HomePage extends StatelessWidget {
   }
 
   // Menu Item Widget
-  Widget _buildMenuItem(IconData icon, String label) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: Colors.blue.withOpacity(0.1),
-          child: Icon(icon, color: Colors.blue, size: 30),
-        ),
-        const SizedBox(height: 10),
-        Text(
-          label,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 14),
-        ),
-      ],
+  Widget _buildMenuItem(BuildContext context, IconData icon, String label,
+      VoidCallback? onTap) {
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: Colors.blue.withOpacity(0.1),
+            child: Icon(icon, color: Colors.blue, size: 30),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            label,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 14),
+          ),
+        ],
+      ),
     );
   }
 }
