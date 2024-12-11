@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WithdrawScreen extends StatelessWidget {
-  const WithdrawScreen({Key? key}) : super(key: key);
+  const WithdrawScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
