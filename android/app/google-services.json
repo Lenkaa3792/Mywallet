@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1096895368613",
+    "project_id": "mywallet-78fb6",
+    "storage_bucket": "mywallet-78fb6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096895368613:android:723d4e45698f487c6c6c4c",
+        "android_client_info": {
+          "package_name": "com.example.my_pocket_wallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz8uP9IJk2Pb3j5RLMhIep5I2bhkXbKxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
