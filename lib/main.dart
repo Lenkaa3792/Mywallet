@@ -2,8 +2,8 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:my_pocket_wallet/classes/homecontent.dart';
 import 'package:my_pocket_wallet/firebase_options.dart';
-import 'package:my_pocket_wallet/screens/home_page.dart';
 import 'package:my_pocket_wallet/screens/splashscreen.dart'; // Importing the Material package.
 
 void main() async {
@@ -26,7 +26,7 @@ class MyPocketWallet extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Splashscreen(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) =>  const Homecontent(),
         // Add more routes as needed
       },
     );
